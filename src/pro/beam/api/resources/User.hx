@@ -10,6 +10,7 @@ class User extends AbstractResource
 	public var id(default, set) : Int;
 	
 	var roles : Array<String>;
+	var permissions : Array<String>;
 
 	public function new(name:String, ?userName, ?id) 
 	{
@@ -17,6 +18,7 @@ class User extends AbstractResource
 		set_userName(userName);
 		set_id(id);
 		this.roles = new Array<String>();
+		this.permissions = new Array<String>();
 	}
 	
 	function set_userName(userName)
@@ -35,8 +37,19 @@ class User extends AbstractResource
 		return this;
 	}
 	
+	public function addPermission(permission) : User
+	{
+		this.permissions.push(permission);
+		return this;
+	}
+	
 	public function getRoles() : Array<String>
 	{
 		return roles;
+	}
+	
+	public function getPermissions() : Array<String>
+	{
+		return permissions;
 	}
 }
