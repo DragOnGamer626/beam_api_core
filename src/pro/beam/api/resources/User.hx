@@ -13,6 +13,10 @@ class User extends AbstractResource
 	var permissions : Array<String>;
 	
 	public var channel(default, set) : Channel;
+	
+	public var twitter(default, set) : String;
+	public var facebook(default, set) : String;
+	public var youtube(default, set) : String;
 
 	public function new(name:String, ?userName, ?id) 
 	{
@@ -36,6 +40,21 @@ class User extends AbstractResource
 	function set_channel(channel)
 	{
 		return this.channel = channel;
+	}
+	
+	function set_twitter(twitter)
+	{
+		return this.twitter = twitter;
+	}
+	
+	function set_facebook(facebook)
+	{
+		return this.facebook = facebook;
+	}
+	
+	function set_youtube(youtube)
+	{
+		return this.youtube = youtube;
 	}
 	
 	public function addRole(role) : User
