@@ -9,6 +9,7 @@ class Notification extends AbstractResource
 	public var createdAt(default, set) : Date;
 	public var readAt(default, set) : Date;
 	public var type(default, set) : String;
+	public var user(default, set) : User;
 	
 	var data : Array<Dynamic>;
 	
@@ -33,6 +34,11 @@ class Notification extends AbstractResource
 		return this.type = type;
 	}
 	
+	function set_user(user)
+	{
+		return this.user = user;
+	}
+	
 	public function addData(data) : Notification
 	{
 		this.data.push(data);
@@ -43,5 +49,5 @@ class Notification extends AbstractResource
 	{
 		return data;
 	}
-	
+
 }

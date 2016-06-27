@@ -27,7 +27,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="#--macro keep(&quot;pro.beam.api.Main&quot;)" />
+    <option additional="#--macro keep(&quot;tests.Main&quot;)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
