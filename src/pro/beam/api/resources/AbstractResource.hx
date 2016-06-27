@@ -11,9 +11,11 @@ class AbstractResource implements Serializable
 {
 	var maps : Array<Map<String, Dynamic>>;
 	var json : String;
+	var name : String;
 	
-	public function new() 
+	public function new(name : String) 
 	{
+		this.name = name;
 		this.maps = new Array<Map<String, Dynamic>>();
 	}
 	
@@ -42,4 +44,15 @@ class AbstractResource implements Serializable
 	{
 		return json;
 	}
+		
+	public function getResources() : Array<Map<String, Dynamic>>
+	{
+		return maps;
+	}
+	
+	public function getName() : String
+	{
+		return name;
+	}
+	
 }
