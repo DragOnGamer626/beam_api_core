@@ -7,15 +7,16 @@ package pro.beam.api.resources;
 class User extends AbstractResource 
 {
 	public var userName(default, set) : String;
-	public var userRole(default, set) : String;
 	public var id(default, set) : Int;
+	
+	var roles : Array<String>;
 
-	public function new(name:String, ?userName, ?userRole, ?id) 
+	public function new(name:String, ?userName, ?id) 
 	{
 		super(name);
 		set_userName(userName);
-		set_userRole(userRole);
 		set_id(id);
+		this.roles = new Array<String>();
 	}
 	
 	function set_userName(userName)
@@ -23,14 +24,19 @@ class User extends AbstractResource
 		return this.userName = userName;
 	}
 	
-	function set_userRole(userRole)
-	{
-		return this.userRole = userRole;
-	}
-	
 	function set_id(id)
 	{
 		return this.id = id;
 	}
 	
+	public function addRole(role) : User
+	{
+		this.roles.push(role);
+		return this;
+	}
+	
+	public function getRoles() : Array<String>
+	{
+		return roles;
+	}
 }
