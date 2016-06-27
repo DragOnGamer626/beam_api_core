@@ -11,6 +11,8 @@ class User extends AbstractResource
 	
 	var roles : Array<String>;
 	var permissions : Array<String>;
+	
+	public var channel(default, set) : Channel;
 
 	public function new(name:String, ?userName, ?id) 
 	{
@@ -29,6 +31,11 @@ class User extends AbstractResource
 	function set_id(id)
 	{
 		return this.id = id;
+	}
+	
+	function set_channel(channel)
+	{
+		return this.channel = channel;
 	}
 	
 	public function addRole(role) : User
