@@ -11,5 +11,4 @@ interface Serializable
 	
 	public function getJson() : String;
 	
-	public function getName() : String;
 }

@@ -11,14 +11,37 @@ class AbstractResource implements Serializable
 {
 	var maps : Array<Map<String, Dynamic>>;
 	var json : String;
-	var name : String;
 	
-	public function new(name : String) 
+	public var id(default, set) : Int;
+	public var name(default, set) : String;
+	public var createdAt(default, set) : Date;
+	public var updatedAt(default, set) : Date;
+	
+	public function new(?name : String) 
 	{
-		this.name = name;
+		set_name(name);
 		this.maps = new Array<Map<String, Dynamic>>();
 	}
 	
+	function set_id(id)
+	{
+		return this.id = id;
+	}
+	
+	function set_name(name)
+	{
+		return this.name = name;
+	}
+	
+	function set_createdAt(createdAt)
+	{
+		return this.createdAt = createdAt;
+	}
+	
+	function set_updatedAt(updatedAt)
+	{
+		return this.updatedAt = updatedAt;
+	}
 	
 	/* INTERFACE pro.beam.api.utils.Serializable */
 	
@@ -48,11 +71,6 @@ class AbstractResource implements Serializable
 	public function getResources() : Array<Map<String, Dynamic>>
 	{
 		return maps;
-	}
-	
-	public function getName() : String
-	{
-		return name;
 	}
 	
 }

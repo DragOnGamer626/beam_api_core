@@ -6,7 +6,6 @@ package pro.beam.api.resources;
  */
 class Notification extends AbstractResource 
 {
-	public var createdAt(default, set) : Date;
 	public var readAt(default, set) : Date;
 	public var type(default, set) : String;
 	public var user(default, set) : User;
@@ -17,11 +16,6 @@ class Notification extends AbstractResource
 	{
 		super(name);
 		this.data = new Array<Dynamic>();
-	}
-	
-	function set_createdAt(createdAt)
-	{
-		return this.createdAt = createdAt;
 	}
 	
 	function set_readAt(readAt)

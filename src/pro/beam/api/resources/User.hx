@@ -7,7 +7,6 @@ package pro.beam.api.resources;
 class User extends AbstractResource 
 {
 	public var userName(default, set) : String;
-	public var id(default, set) : Int;
 	
 	var roles : Array<String>;
 	var permissions : Array<String>;
@@ -18,9 +17,7 @@ class User extends AbstractResource
 	public var facebook(default, set) : String;
 	public var youtube(default, set) : String;
 	
-	public var createdAt(default, set) : Date;
 	public var deletedAt(default, set) : Date;
-	public var updatedAt(default, set) : Date;
 
 	public function new(name:String, ?userName, ?id) 
 	{
@@ -34,11 +31,6 @@ class User extends AbstractResource
 	function set_userName(userName)
 	{
 		return this.userName = userName;
-	}
-	
-	function set_id(id)
-	{
-		return this.id = id;
 	}
 	
 	function set_channel(channel)
@@ -61,21 +53,11 @@ class User extends AbstractResource
 		return this.youtube = youtube;
 	}
 	
-	function set_createdAt(createdAt)
-	{
-		return this.createdAt = createdAt;
-	}
-	
 	function set_deletedAt(deletedAt)
 	{
 		return this.deletedAt = deletedAt;
 	}
-	
-	function set_updatedAt(updatedAt)
-	{
-		return this.updatedAt = updatedAt;
-	}
-	
+		
 	public function addRole(role) : User
 	{
 		this.roles.push(role);

@@ -6,7 +6,6 @@ package pro.beam.api.resources;
  */
 class Channel extends AbstractResource 
 {
-	public var id(default, set) : Int;
 	public var online(default, set) : Bool = false;
 	public var partnered(default, set) : Bool = false;
 	public var interactive(default, set) : Bool = false;
@@ -19,11 +18,6 @@ class Channel extends AbstractResource
 	{
 		super(name);
 		set_id(id);
-	}
-	
-	function set_id(id)
-	{
-		return this.id = id;
 	}
 	
 	function set_online(online)
