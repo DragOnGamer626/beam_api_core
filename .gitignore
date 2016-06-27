@@ -3,4 +3,4 @@ bin/
 *.xml
 *.hxml
 assets/
-
+src/tests/
