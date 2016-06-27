@@ -7,11 +7,13 @@ package pro.beam.api.resources;
 class Channel extends AbstractResource 
 {
 	public var id(default, set) : Int;
-	
 	public var online(default, set) : Bool = false;
 	public var partnered(default, set) : Bool = false;
 	public var interactive(default, set) : Bool = false;
 	public var followers(default, set) : Int;
+	public var subscribers(default, set) : Int;
+	public var title(default, set) : String;
+	public var game(default, set) : String;
 	
 	public function new(name:String, ?id) 
 	{
@@ -41,6 +43,21 @@ class Channel extends AbstractResource
 	
 	function set_followers(followers)
 	{
-		this.followers = followers;
+		return this.followers = followers;
+	}
+	
+	function set_subscribers(subscribers)
+	{
+		return this.subscribers = subscribers;
+	}
+	
+	function set_title(title)
+	{
+		return this.title = title;
+	}
+	
+	function set_game(game)
+	{
+		return this.game = game;
 	}
 }
