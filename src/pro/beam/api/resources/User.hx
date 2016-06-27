@@ -17,6 +17,10 @@ class User extends AbstractResource
 	public var twitter(default, set) : String;
 	public var facebook(default, set) : String;
 	public var youtube(default, set) : String;
+	
+	public var createdAt(default, set) : Date;
+	public var deletedAt(default, set) : Date;
+	public var updatedAt(default, set) : Date;
 
 	public function new(name:String, ?userName, ?id) 
 	{
@@ -55,6 +59,21 @@ class User extends AbstractResource
 	function set_youtube(youtube)
 	{
 		return this.youtube = youtube;
+	}
+	
+	function set_createdAt(createdAt)
+	{
+		return this.createdAt = createdAt;
+	}
+	
+	function set_deletedAt(deletedAt)
+	{
+		return this.deletedAt = deletedAt;
+	}
+	
+	function set_updatedAt(updatedAt)
+	{
+		return this.updatedAt = updatedAt;
 	}
 	
 	public function addRole(role) : User
