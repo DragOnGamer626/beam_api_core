@@ -9,8 +9,8 @@ class Chat extends AbstractResource
 	var users : Array<User>;
 	var messages : Array<Message>;
 	
-	public var linksAllowed = false;
-	public var linksClickable = false;
+	public var linksAllowed(default, set) : Bool = false;
+	public var linksClickable(default, set) : Bool = false;
 	public var slowChat(default, set) : Int;
 	
 	public function new(name:String) 
