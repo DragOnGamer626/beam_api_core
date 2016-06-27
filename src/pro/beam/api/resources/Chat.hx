@@ -20,6 +20,16 @@ class Chat extends AbstractResource
 		this.messages = new Array<Message>();
 	}
 	
+	function set_linksAllowed(linksAllowed)
+	{
+		return this.linksAllowed = linksAllowed;
+	}
+	
+	function set_linksClickable(linksClickable)
+	{
+		return this.linksClickable = linksClickable;
+	}
+	
 	function set_slowChat(slowChat)
 	{
 		return this.slowChat = slowChat;
