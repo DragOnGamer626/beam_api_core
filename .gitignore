@@ -1,2 +1,6 @@
 bin/
 *.hxproj
+*.xml
+*.hxml
+assets/
+
