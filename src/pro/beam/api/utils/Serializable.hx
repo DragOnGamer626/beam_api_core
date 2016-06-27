@@ -8,4 +8,6 @@ interface Serializable
 	public function add(name : String, value : Dynamic) : Serializable;
 	
 	public function build() : Void;
+	
+	public function getJson() : String;
 }
