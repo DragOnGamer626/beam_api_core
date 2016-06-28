@@ -5,7 +5,7 @@ package pro.beam.api.utils;
  */
 interface Serializable 
 {
-	public function addtoJson(name : String, value : Dynamic) : Serializable;
+	public function addToJson(name : String, value : Dynamic) : Serializable;
 	
 	public function serialize() : Void;
 	
