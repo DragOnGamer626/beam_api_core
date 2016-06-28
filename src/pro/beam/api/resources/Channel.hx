@@ -10,6 +10,7 @@ class Channel extends AbstractResource
 	public var badge(default, set) : String;
 	public var badgeID(default, set) : String;
 	// Cache param here
+	public var cover(default, set) : Cover;
 	public var online(default, set) : Bool = false;
 	public var partnered(default, set) : Bool = false;
 	public var interactive(default, set) : Bool = false;
@@ -37,6 +38,11 @@ class Channel extends AbstractResource
 	function set_badgeID(badgeID)
 	{
 		return this.badgeID = badgeID;
+	}
+	
+	function set_cover(cover)
+	{
+		return this.cover = cover;
 	}
 	
 	function set_online(online)
