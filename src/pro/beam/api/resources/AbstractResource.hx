@@ -13,6 +13,8 @@ class AbstractResource implements Serializable
 	var json : String;
 	
 	public var id(default, set) : Int;
+	public var relid(default, set) : Int;
+	public var relativePath(default, set) : String;
 	public var name(default, set) : String;
 	public var createdAt(default, set) : Date;
 	public var updatedAt(default, set) : Date;
@@ -27,6 +29,16 @@ class AbstractResource implements Serializable
 	function set_id(id)
 	{
 		return this.id = id;
+	}
+	
+	function set_relid(relid)
+	{
+		return this.relid = relid;
+	}
+	
+	function set_relativePath(relativePath)
+	{
+		return this.relativePath = relativePath;
 	}
 	
 	function set_name(name)
