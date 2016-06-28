@@ -7,7 +7,7 @@ package pro.beam.api.resources;
 class Channel extends AbstractResource 
 {
 	public var audience(default, set) : String;
-	public var badge(default, set) : String;
+	public var badge(default, set) : Badge;
 	public var badgeID(default, set) : String;
 	// Cache param here
 	public var cover(default, set) : Cover;
