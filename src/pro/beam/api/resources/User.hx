@@ -22,6 +22,9 @@ class User extends AbstractResource
 	public var player_me(default, set) : String;
 	
 	public var deletedAt(default, set) : Date;
+	
+	public var bio(default, set) : String;
+	public var points(default, set) : Int;
 
 	public function new(userName, ?id) 
 	{
@@ -72,6 +75,16 @@ class User extends AbstractResource
 	function set_deletedAt(deletedAt)
 	{
 		return this.deletedAt = deletedAt;
+	}
+	
+	function set_bio(bio)
+	{
+		return this.bio = bio;
+	}
+	
+	function set_points(points)
+	{
+		return this.points = points;
 	}
 	
 	public function addGroup(group) : User
