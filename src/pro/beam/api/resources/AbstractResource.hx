@@ -45,7 +45,7 @@ class AbstractResource implements Serializable
 	
 	/* INTERFACE pro.beam.api.utils.Serializable */
 	
-	public function add(name:String, value:Dynamic):Serializable 
+	public function addToJson(name:String, value:Dynamic):Serializable 
 	{
 		var map = null;
 		if (name != null && value != null)
@@ -57,7 +57,7 @@ class AbstractResource implements Serializable
 		return this;
 	}
 	
-	public function build():Void 
+	public function serialize():Void 
 	{
 		if (maps != null)
 			this.json = Json.stringify(maps);
