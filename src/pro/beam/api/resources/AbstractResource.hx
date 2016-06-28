@@ -16,6 +16,7 @@ class AbstractResource implements Serializable
 	public var name(default, set) : String;
 	public var createdAt(default, set) : Date;
 	public var updatedAt(default, set) : Date;
+	public var meta(default, set) : Map<String, Dynamic>;
 	
 	public function new(?name : String) 
 	{
@@ -41,6 +42,11 @@ class AbstractResource implements Serializable
 	function set_updatedAt(updatedAt)
 	{
 		return this.updatedAt = updatedAt;
+	}
+	
+	function set_meta(meta)
+	{
+		return this.meta = meta;
 	}
 	
 	/* INTERFACE pro.beam.api.utils.Serializable */

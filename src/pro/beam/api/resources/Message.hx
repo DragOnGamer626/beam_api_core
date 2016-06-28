@@ -9,7 +9,7 @@ class Message extends AbstractResource
 	public var data(default, set) : String;
 	public var type(default, set) : String;
 	
-	public function new(name:String, ?data, ?type) 
+	public function new(?name:String, ?data, ?type) 
 	{
 		super(name);
 		set_data(data);

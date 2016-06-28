@@ -6,6 +6,10 @@ package pro.beam.api.resources;
  */
 class Channel extends AbstractResource 
 {
+	public var audience(default, set) : String;
+	public var badge(default, set) : String;
+	public var badgeID(default, set) : String;
+	// Cache param here
 	public var online(default, set) : Bool = false;
 	public var partnered(default, set) : Bool = false;
 	public var interactive(default, set) : Bool = false;
@@ -14,10 +18,25 @@ class Channel extends AbstractResource
 	public var title(default, set) : String;
 	public var game(default, set) : String;
 	
-	public function new(name:String, ?id) 
+	public function new(?name:String, ?id) 
 	{
 		super(name);
 		set_id(id);
+	}
+	
+	function set_audience(audience)
+	{
+		return this.audience = audience;
+	}
+	
+	function set_badge(badge)
+	{
+		return this.badge = badge;
+	}
+	
+	function set_badgeID(badgeID)
+	{
+		return this.badgeID = badgeID;
 	}
 	
 	function set_online(online)

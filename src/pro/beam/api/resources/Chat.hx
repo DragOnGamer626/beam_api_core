@@ -13,7 +13,7 @@ class Chat extends AbstractResource
 	public var linksClickable(default, set) : Bool = false;
 	public var slowChat(default, set) : Int;
 	
-	public function new(name:String) 
+	public function new(?name:String) 
 	{
 		super(name);
 		this.users = new Array<User>();
