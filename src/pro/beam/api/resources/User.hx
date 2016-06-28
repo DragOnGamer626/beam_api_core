@@ -7,7 +7,9 @@ package pro.beam.api.resources;
 class User extends AbstractResource 
 {
 	public var userName(default, set) : String;
+	public var verified(default, set) : Bool;
 	
+	var groups : Array<String>;
 	var roles : Array<String>;
 	var permissions : Array<String>;
 	var achievements : Array<Achievement>;
@@ -21,11 +23,12 @@ class User extends AbstractResource
 	
 	public var deletedAt(default, set) : Date;
 
-	public function new(name:String, ?userName, ?id) 
+	public function new(userName, ?id) 
 	{
-		super(name);
+		super();
 		set_userName(userName);
 		set_id(id);
+		this.groups = new Array<String>();
 		this.roles = new Array<String>();
 		this.permissions = new Array<String>();
 		this.achievements = new Array<Achievement>();
@@ -34,6 +37,11 @@ class User extends AbstractResource
 	function set_userName(userName)
 	{
 		return this.userName = userName;
+	}
+	
+	function set_verified(verified)
+	{
+		return this.verified = verified;
 	}
 	
 	function set_channel(channel)
@@ -65,6 +73,12 @@ class User extends AbstractResource
 	{
 		return this.deletedAt = deletedAt;
 	}
+	
+	public function addGroup(group) : User
+	{
+		this.groups.push(group);
+		return this;
+	}
 		
 	public function addRole(role) : User
 	{
@@ -82,6 +96,11 @@ class User extends AbstractResource
 	{
 		this.achievements.push(achievement);
 		return this;
+	}
+	
+	public function getGroups() : Array<String>
+	{
+		return groups;
 	}
 	
 	public function getRoles() : Array<String>
