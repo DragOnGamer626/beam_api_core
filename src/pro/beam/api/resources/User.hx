@@ -10,12 +10,14 @@ class User extends AbstractResource
 	
 	var roles : Array<String>;
 	var permissions : Array<String>;
+	var achievements : Array<Achievement>;
 	
 	public var channel(default, set) : Channel;
 	
 	public var twitter(default, set) : String;
 	public var facebook(default, set) : String;
 	public var youtube(default, set) : String;
+	public var player_me(default, set) : String;
 	
 	public var deletedAt(default, set) : Date;
 
@@ -26,6 +28,7 @@ class User extends AbstractResource
 		set_id(id);
 		this.roles = new Array<String>();
 		this.permissions = new Array<String>();
+		this.achievements = new Array<Achievement>();
 	}
 	
 	function set_userName(userName)
@@ -53,6 +56,11 @@ class User extends AbstractResource
 		return this.youtube = youtube;
 	}
 	
+	function set_player_me(player_me)
+	{
+		return this.player_me = player_me;
+	}
+	
 	function set_deletedAt(deletedAt)
 	{
 		return this.deletedAt = deletedAt;
@@ -70,6 +78,12 @@ class User extends AbstractResource
 		return this;
 	}
 	
+	public function addAchievement(achievement) : User
+	{
+		this.achievements.push(achievement);
+		return this;
+	}
+	
 	public function getRoles() : Array<String>
 	{
 		return roles;
@@ -78,5 +92,10 @@ class User extends AbstractResource
 	public function getPermissions() : Array<String>
 	{
 		return permissions;
+	}
+	
+	public function getAchievements() : Array<Achievement>
+	{
+		return achievements;
 	}
 }
